@@ -1,7 +1,5 @@
 import re
 
-loop = True
-
 print("Oceanscript (c) encryptedGil 2024-Present")
 
 def split_string(input_string):
@@ -26,11 +24,13 @@ def parse(tokens):
             raise SyntaxError("Invalid argument for print function")
     else:
         raise SyntaxError("Invalid function")
-    
 
 def execute(command):
     if command[0] == "print":
-        print(command[1])
+            print(command[1])
+    
+    else:
+        raise ValueError("Unknown command")
 
 def interpreter(input_string):
     tokens = split_string(input_string)
@@ -41,4 +41,7 @@ def interpreter(input_string):
 while True:
     inputer = input("$~")
     interpreter(inputer)
+
+
+
 
