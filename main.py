@@ -26,7 +26,7 @@ def parse(tokens):
         raise SyntaxError("Invalid function")
 
 def execute(command):
-    if command[0] == "print":
+    if command[0] == "say":
             print(command[1])
     
     else:
