@@ -15,11 +15,11 @@ def split_string(input_string):
     return result
 
 def parse(tokens):
-    if len(tokens) >= 5 and tokens[0] == 'print' and tokens[1] == '(' and tokens[-1] == ')':
+    if len(tokens) >= 5 and tokens[0] == 'say' and tokens[1] == '(' and tokens[-1] == ')':
         # Join the tokens inside the parentheses to form the argument
         argument = ''.join(tokens[2:-1]).strip()
         if argument.startswith('"') and argument.endswith('"'):
-            return ("print", argument[1:-1])  # Remove the surrounding quotes
+            return ("say", argument[1:-1])  # Remove the surrounding quotes
         else:
             raise SyntaxError("Invalid argument for print function")
     else:
